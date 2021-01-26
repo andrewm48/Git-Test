@@ -10,8 +10,50 @@ namespace Git_Test
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            const int from = 1;
+            const int to = 100;
+            Console.WriteLine("You are thinking of a number between 0 and 100");
+            int randomNumber = new Random().Next(from, to);
+            int trys=0;
+            int guessedNumber;
+
+            Console.Write("The number is between {0} and {1}. ", from, to);
+            while (true)
+            {
+                Console.Write("Make a guess: ");
+                if (int.TryParse(Console.ReadLine(), out guessedNumber))
+                {
+                    trys++;
+                    if (guessedNumber == randomNumber)
+                    {
+                        
+                       
+                        Console.WriteLine("You guessed the right number!");
+
+                        Console.WriteLine("it took you");
+                        Console.WriteLine(trys);
+                        Console.WriteLine("trys");
+
+                        
+
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Your guess was too {0}.", (guessedNumber > randomNumber) ? "high" : "low");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Input was not an integer.");
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
     }
 }
+
+    
