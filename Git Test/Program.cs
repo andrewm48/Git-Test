@@ -10,9 +10,13 @@ namespace Git_Test
     {
         static void Main(string[] args)
         {
-            const int from = 1;
-            const int to = 100;
+             int from = 1;
+             int to = 100;
             Console.WriteLine("You are thinking of a number between 0 and 100");
+            Console.WriteLine("Enter the starting number");
+            from = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the stoping number");
+            to = Convert.ToInt32(Console.ReadLine());
             int randomNumber = new Random().Next(from, to);
             int trys=0;
             int guessedNumber;
